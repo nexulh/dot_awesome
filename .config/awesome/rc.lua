@@ -218,9 +218,9 @@ local taglist_buttons = gears.table.join(
                                               if client.focus then
                                                   client.focus:toggle_tag(t)
                                               end
-                                          end),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+                                          end)
+                    -- awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+                    -- awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
 local tasklist_buttons = gears.table.join(
@@ -237,13 +237,14 @@ local tasklist_buttons = gears.table.join(
                                           end),
                      awful.button({ }, 3, function()
                                               awful.menu.client_list({ theme = { width = 250 } })
-                                          end),
-                     awful.button({ }, 4, function ()
-                                              awful.client.focus.byidx(1)
-                                          end),
-                     awful.button({ }, 5, function ()
-                                              awful.client.focus.byidx(-1)
-                                          end))
+                                          end)
+                     -- awful.button({ }, 4, function ()
+                     --                          awful.client.focus.byidx(1)
+                     --                      end),
+                     -- awful.button({ }, 5, function ()
+                     --                          awful.client.focus.byidx(-1)
+                     --                      end)
+)
 
 local function set_wallpaper(s)
     -- Wallpaper
@@ -282,9 +283,10 @@ awful.screen.connect_for_each_screen(function(s)
     s.mylayoutbox = awful.widget.layoutbox(s)
     s.mylayoutbox:buttons(gears.table.join(
                            awful.button({ }, 1, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 3, function () awful.layout.inc(-1) end),
-                           awful.button({ }, 4, function () awful.layout.inc( 1) end),
-                           awful.button({ }, 5, function () awful.layout.inc(-1) end)))
+                           awful.button({ }, 3, function () awful.layout.inc(-1) end)
+                           -- awful.button({ }, 4, function () awful.layout.inc( 1) end),
+                           -- awful.button({ }, 5, function () awful.layout.inc(-1) end)
+    ))
 
     -- Create a taglist widget
     s.mytaglist = awful.widget.taglist {
@@ -383,9 +385,9 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () mymainmenu:toggle() end)
+    -- awful.button({ }, 4, awful.tag.viewnext),
+    -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
 
