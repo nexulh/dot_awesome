@@ -198,10 +198,12 @@ myvolumewidget = wibox.container.margin(myvolumewidget, 0, 0, 0, 4, beautiful.co
 mywifiwidget = net_widgets.wireless({interface="wlp1s0", popup_position="bottom_right"})
 --mywifiwidget = net_widgets.wireless({interface="wlx04d4c45dc1f8"})
 myinternetwidget = net_widgets.internet({indent = 0, timeout = 5, showconnected = true})
+myvpnwidget = net_widgets.vpn({timeout = 5, showconnected = true, popup_position="bottom_right"})
 mynetwidgets = wibox.container.margin(
     wibox.layout.fixed.horizontal(
         mywifiwidget,
-        wibox.container.margin(myinternetwidget, 8, 0, 4)
+        wibox.container.margin(myinternetwidget, 8, 0, 4),
+        wibox.container.margin(myvpnwidget, 8, 0, 4)
     ),
     0, 0, 0, 4, beautiful.color_gray)
 
