@@ -25,7 +25,7 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 -- Extras
 vicious = require("vicious")
 
--- Net widgets
+-- Net widgets from https://github.com/pltanton/net_widgets.git
 local net_widgets = require("net_widgets")
 
 -- {{{ Error handling
